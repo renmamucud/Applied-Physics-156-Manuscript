@@ -1,0 +1,29 @@
+#For the generation of the 3D plot:
+
+import matplotlib as mpl
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+t = np.linspace(0,1,100)
+x1 = np.cos(2*np.pi*t)
+y1 = np.sin(2*np.pi*t)
+z1 = np.linspace(0,1, 100)
+
+x2 = np.ones(100)
+y2 = np.zeros(100)
+z2 = np.linspace(0,1,100)
+
+x3 = 1 - np.sin(np.pi*t)/2
+y3 = np.zeros(100)
+z3 = 1 - np.cos(np.pi*t)/2
+
+ax.plot(x1, y1, t)
+ax.plot(x2,y2,t)
+ax.plot(x3,y3,t)
+
+plt.show()
+
+#For the calculation of the line integrals:
